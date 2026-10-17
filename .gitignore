@@ -1,0 +1,15 @@
+# المجلدات الضخمة للمكتبات
+node_modules/
+dist/
+.cache/
+
+# ملفات البيئة السرية
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# ملفات النظام المزعجة
+.DS_Store
+Thumbs.db
