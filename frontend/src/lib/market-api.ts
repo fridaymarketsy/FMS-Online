@@ -79,7 +79,14 @@ async function setSession(result: { session?: { access_token: string; refresh_to
     access_token: result.session.access_token,
     refresh_token: result.session.refresh_token,
   });
-  if (error) throw new Error('تعذر حفظ جلسة تسجيل الدخول');
+  if (error) {
+    console.error('[marketApi.setSession] Supabase setSession failed', {
+      message: error.message,
+      status: error.status,
+      code: error.code,
+    });
+    throw new Error('تعذر حفظ جلسة تسجيل الدخول');
+  }
 }
 
 export function mapAd(ad: ApiAd): Listing {
